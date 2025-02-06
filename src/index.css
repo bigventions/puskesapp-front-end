@@ -3,5 +3,14 @@
 @tailwind utilities;
 body {
   font-family: 'Poppins', sans-serif; /* Ganti dengan font yang diinginkan */
-  background-color: #a8dadc;
+  background-color: white;
+
+  /* 
+    Palet Color
+    background-color: '#e63946';
+    background-color: '#f1faee';
+    background-color: '#a8dadc';
+    background-color: '#457b9d';
+    background-color: '#1d3557'; 
+  */
 }

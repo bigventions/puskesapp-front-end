@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './fontawesome';
 import moment from "moment";
-import Main1 from './views/main1';
+import Home from './views/homePage';
 import Login from './views/loginPage';
 import ErrorPage from './views/errorPage';
 
@@ -17,7 +17,7 @@ window.moment = moment;
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main1 />,
+    element: <Home />,
     errorElement: <ErrorPage />
   },
   {

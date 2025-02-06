@@ -21,7 +21,7 @@ export default function Login () {
           </div>
           <p className="text-justify pt-5 text-white text-sm md:text-base">"Halaman login Puskesmas memungkinkan petugas dan staf untuk mengakses sistem manajemen data kesehatan dengan aman menggunakan username dan password. Desain responsif memastikan akses yang mudah di berbagai perangkat, sementara sistem keamanan yang terjamin menjaga data tetap aman. Setelah login, pengguna dapat mengelola data pasien, inventaris, dan layanan kesehatan dengan efisien."</p>
         </div>
-        <div className="flex justify-center items-center bg-white drop-shadow-lg rounded-lg w-full md:w-auto m-4 md:m-6 p-6 md:p-10">
+        <div className="flex justify-center items-center bg-white drop-shadow-lg rounded-lg md:w-auto m-4 md:m-6 p-6 md:p-10">
           <div className="flex flex-col items-center w-full max-w-sm">
             <div className="py-5">
               <img src={logo} alt="logo" className="w-32 md:w-40" />
