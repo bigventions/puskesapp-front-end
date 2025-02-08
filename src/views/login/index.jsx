@@ -1,9 +1,10 @@
 import { useState, useEffect, useId } from "react";
-import logoFull from '../assets/images/puskesapp-white.png'
-import logo from '../assets/images/logo.png';
+import logoFull from '../../assets/images/puskesapp-white.png'
+import logo from '../../assets/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Login () {
+
   const [isHide, setIsOpen] = useState(false);
 
   const hidePassword = () => {
