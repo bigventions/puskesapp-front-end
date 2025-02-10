@@ -1,0 +1,13 @@
+{
+  "printWidth": 100, // Maksimal panjang baris (default: 80, tapi 100 lebih fleksibel)
+  "tabWidth": 2, // Gunakan indentasi 2 spasi
+  "useTabs": false, // Gunakan spasi, bukan tab
+  "semi": true, // Tambahkan titik koma di akhir setiap pernyataan
+  "singleQuote": false, // Gunakan tanda kutip tunggal (')
+  "quoteProps": "consistent", // Gunakan tanda kutip secara konsisten dalam properti objek.
+  "jsxSingleQuote": false, // Gunakan tanda kutip ganda di JSX ("")
+  "trailingComma": "es5", // Tambahkan koma akhir hanya di ES5 (objek, array)
+  "bracketSpacing": true, // Tambahkan spasi di dalam kurung kurawal { foo: bar }
+  "jsxBracketSameLine": false, // Pindahkan `>` ke baris baru dalam JSX
+  "arrowParens": "always", // Selalu gunakan tanda kurung di arrow function (x) => {}
+}
