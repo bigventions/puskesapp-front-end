@@ -6,7 +6,7 @@ export default function MainLayout() {
   return (
     <div className="flex flex-cols">
       <Sidebar />
-      <div className="w-screen">
+      <div className="dark:bg-darkMainBg h-screen w-screen">
         <Navbar />
         <Outlet />
       </div>

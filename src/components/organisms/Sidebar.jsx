@@ -2,19 +2,19 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex">
+    <div className="flex bg-lightBg text-black dark:bg-darkBg dark:text-white">
       <div
-        className={`bg-[#1d3557] h-screen flex flex-col ${
+        className={`flex flex-col h-screen ${
           isOpen ? "w-64" : "w-15"
         } transition-all duration-300 px-2 py-1`}
       >
         {/* Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center text-white h-12 px-4 hover:bg-[#2a4d7a]"
+          className="flex items-center h-12 px-4 rounded-lg hover:bg-hoverLightBg hover:text-white dark:hover:bg-hoverDarkBg"
         >
           <FontAwesomeIcon icon="bars" size="sm" />
         </button>
@@ -32,7 +32,7 @@ export default function Sidebar() {
             <a
               key={index}
               href={item.page}
-              className="flex items-center text-white h-12 px-4 rounded-lg hover:bg-[#2a4d7a]"
+              className="flex items-center h-12 px-4 rounded-lg hover:bg-hoverLightBg hover:text-white dark:hover:bg-hoverDarkBg"
             >
               <FontAwesomeIcon icon={item.icon} size="sm" />
               {isOpen && <span className="ml-2">{item.name}</span>}
@@ -44,7 +44,7 @@ export default function Sidebar() {
         <div className="mt-auto">
           <a
             href="#"
-            className="flex items-center text-white h-12 px-4 hover:bg-[#a63946]"
+            className="flex items-center h-12 px-4 rounded-lg hover:bg-bgButtonDanger hover:text-white"
           >
             <FontAwesomeIcon icon="door-open" size="sm" />
             {isOpen && <span className="ml-2">Exit</span>}
