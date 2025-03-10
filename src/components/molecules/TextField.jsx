@@ -1,24 +1,36 @@
+// Import Dependencies
+
 import { useId } from "react";
-import { Input } from "../atoms/Input";
+import Input from "../atoms/Input";
 
 export const TextField = ({
+  // Props
+  disabled,
   id,
   label,
   label2 = "",
   label3 = "",
-  type,
+  max = "",
   placeholder,
-  disabled,
+  type,
   value,
   onChange = () => {},
-  max = "",
 }) => {
+  // State
   const generatedId = useId();
   const myId = id || generatedId;
   const handleChange = (e) => {
     let nv = e.target.value;
     onChange(nv);
   };
+
+  // Hooks
+
+  // Methods
+
+  // Event Hanlder
+
+  // Return JSX
   return (
     <div className="w-full">
       <div className="flex justify-between">

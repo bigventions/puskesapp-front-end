@@ -29,14 +29,10 @@ export default [
     rules: {
       "indent": ["error", 2], // Mengatur indentasi kode agar konsisten (misalnya, 2 atau 4 spasi).
       "semi": ["error", "always"], // Memastikan penggunaan titik koma (;) di akhir setiap statement.
-      "quotes": [
-        "error",
-        "double",
-        { avoidEscape: true, allowTemplateLiterals: true },
-      ], // Gunakan tanda kutip double ("), tapi harus konsisten.
+      "quotes": ["error", "double", { avoidEscape: true, allowTemplateLiterals: true }], // Gunakan tanda kutip double ("), tapi harus konsisten.
       "eqeqeq": ["error", "always"], // Wajib menggunakan === dibanding == untuk mencegah perbandingan yang tidak terduga.
       "curly": ["error", "multi-line"], // Memastikan bahwa semua blok kode dalam if, for, atau while menggunakan {}.
-      "no-console": ["error"], // Mencegah penggunaan console.log() di production.
+      "no-console": ["error", { "allow": ["warn", "error", "info"] }], // Mencegah penggunaan console.log() di production.
       "no-debugger": ["error"], // Mencegah penggunaan debugger di production.
       "no-unused-vars": ["error"], // Mencegah variabel yang tidak digunakan dalam kode.
       "unused-imports/no-unused-imports": ["error"], // Mencegah import yang tidak dipakai di dalam file.

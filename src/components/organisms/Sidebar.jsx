@@ -1,56 +1,68 @@
+// Import Dependencies
+
+import { Link } from "react-router-dom";
+import {
+  Home,
+  LineChart,
+  User,
+  PlusSquare,
+  HeartPulse,
+  Settings,
+} from "lucide-react";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
+export const Sidebar = () => {
+  // State
+  const [activeIndex, setActiveIndex] = useState(null);
+  const menuItems = [
+    { name: "Beranda", icon: <Home size={14} />, page: "/" },
+    { name: "Dashboard", icon: <LineChart size={14} />, page: "/dashboard" },
+    { name: "Profile", icon: <User size={14} />, page: "/" },
+    { name: "Pendaftaran", icon: <PlusSquare size={14} />, page: "/admission" },
+    { name: "Pelayanan", icon: <HeartPulse size={14} />, page: "/" },
+    { name: "Pengaturan", icon: <Settings size={14} />, page: "/" },
+  ];
 
+  // Hooks
+
+  // Methods
+  const handleHover = (index) => {
+    setActiveIndex(index);
+  };
+  const handleMouseLeave = () => {
+    setActiveIndex(null);
+  };
+
+  // Event Hanlder
+
+  // Return JSX
   return (
-    <div className="flex bg-lightBg text-black dark:bg-darkBg dark:text-white">
-      <div
-        className={`flex flex-col h-screen ${
-          isOpen ? "w-64" : "w-15"
-        } transition-all duration-300 px-2 py-1`}
-      >
-        {/* Toggle Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center h-12 px-4 rounded-lg hover:bg-hoverLightBg hover:text-white dark:hover:bg-hoverDarkBg"
-        >
-          <FontAwesomeIcon icon="bars" size="sm" />
-        </button>
-
-        {/* Navigation Links */}
-        <nav className="flex flex-col flex-grow gap-2 mt-4">
-          {[
-            { name: "Beranda", icon: "home", page: "/" },
-            { name: "Dashboard", icon: "chart-line", page: "/dashboard" },
-            { name: "Profile", icon: "kit-medical", page: "/" },
-            { name: "Daftar", icon: "square-plus", page: "/admission" },
-            { name: "Pelayanan", icon: "heart-pulse", page: "/" },
-            { name: "Pengaturan", icon: "gear", page: "/" },
-          ].map((item, index) => (
-            <a
-              key={index}
-              href={item.page}
-              className="flex items-center h-12 px-4 rounded-lg hover:bg-hoverLightBg hover:text-white dark:hover:bg-hoverDarkBg"
-            >
-              <FontAwesomeIcon icon={item.icon} size="sm" />
-              {isOpen && <span className="ml-2">{item.name}</span>}
-            </a>
-          ))}
-        </nav>
-
-        {/* Exit Button - Selalu di bawah */}
-        <div className="mt-auto">
-          <a
-            href="#"
-            className="flex items-center h-12 px-4 rounded-lg hover:bg-bgButtonDanger hover:text-white"
+    <div>
+      <nav className="flex flex-col h-full rounded-lg bg-lightBg text-black mx-2 dark:bg-darkBg dark:text-white items-center flex-grow gap-2 p-2 w-14">
+        {menuItems.map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center relative"
+            onMouseEnter={() => handleHover(index)}
+            onMouseLeave={handleMouseLeave}
           >
-            <FontAwesomeIcon icon="door-open" size="sm" />
-            {isOpen && <span className="ml-2">Exit</span>}
-          </a>
-        </div>
-      </div>
+            {/* Link with only icon visible initially */}
+            <Link
+              to={item.page}
+              className="flex items-center h-12 px-4 rounded-lg hover:bg-hoverLightBg hover:text-black dark:hover:bg-darkBg"
+            >
+              <span>{item.icon}</span>
+
+              {/* Title appears next to icon only if it's the active item */}
+              <span
+                className={`ml-4 text-sm bg-hoverLightBg text-white dark:bg-darkBg dark:text-white dark:hover:bg-darkBg rounded-lg w-[150px] absolute px-2 py-2 left-full z-40 duration-300 opacity-0 ${activeIndex === index ? "opacity-100 max-w-xs" : "opacity-0 max-w-0"}`}
+              >
+                {item.name}
+              </span>
+            </Link>
+          </div>
+        ))}
+      </nav>
     </div>
   );
-}
+};

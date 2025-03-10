@@ -1,8 +1,19 @@
+// Import Dependencies
+
 import { useState, useEffect } from "react";
 
-export const Button = ({ children, type, className, onClick = () => {} }) => {
+export const Button = ({
+  // Props
+  className,
+  text,
+  type,
+  frontIcon,
+  onClick = () => {},
+}) => {
+  // State
   const [myClass, setClass] = useState("");
 
+  // Hooks
   useEffect(() => {
     switch (type) {
       case "danger":
@@ -23,6 +34,11 @@ export const Button = ({ children, type, className, onClick = () => {} }) => {
     }
   }, [type]);
 
+  // Methods
+
+  // Event Handler
+
+  // Return JSX
   return (
     <button
       type="button"
@@ -30,7 +46,10 @@ export const Button = ({ children, type, className, onClick = () => {} }) => {
       className={`${myClass} ${className}`}
       onClick={onClick}
     >
-      {children || "Submit"}
+      <span className="flex">
+        {frontIcon && <span className="mr-2">{frontIcon}</span>}
+        {text || "Submit"}
+      </span>
     </button>
   );
 };

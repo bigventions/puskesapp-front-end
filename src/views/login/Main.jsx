@@ -1,14 +1,52 @@
-import { useState } from "react";
+// Import Dependencies
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logoFull from "../../assets/images/puskesapp-white.png";
+import { login } from "../../stores/action/AuthActions";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
 import logo from "../../assets/images/logo.png";
+import logoFull from "../../assets/images/puskesapp-white.png";
 
 export default function Main() {
+  // Props
+  // State
+  const [form, setForm] = useState({
+    username: "",
+    password: "",
+  });
   const [isHide, setIsOpen] = useState(false);
 
+  // Hooks
+  const dispatch = useDispatch();
   const hidePassword = () => {
     setIsOpen(!isHide);
   };
+
+  // Methods
+  const handleLogin = () => {
+    try {
+      if (form.username === "" || form.password === "") {
+      } else {
+        dispatch(login(form))
+          .then((result) => {
+            localStorage.setItem("accessToken", result.data.accessToken);
+            localStorage.setItem("refreshToken", result.data.refreshToken);
+          })
+          .catch((error) => {
+            console.error("Login gagal:", error);
+          });
+      }
+    } catch (error) {
+      console.error({ error });
+    }
+  };
+
+  // Event Handler
+  const handleChangeForm = async (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+
+  // Return JSX
   return (
     <div className="flex justify-center items-center min-h-screen p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 bg-[#1d3557] rounded-lg w-full max-w-6xl h-auto md:h-[80%] overflow-hidden shadow-lg">
@@ -46,8 +84,12 @@ export default function Main() {
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
               />
               <input
+                id="username"
                 type="text"
                 placeholder="Username"
+                value={form.username}
+                onChange={handleChangeForm}
+                name="username"
                 className="w-full pl-10 py-2 text-sm border rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
               />
             </div>
@@ -57,8 +99,12 @@ export default function Main() {
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
               />
               <input
+                id="password"
                 type="password"
                 placeholder="Password"
+                value={form.password}
+                onChange={handleChangeForm}
+                name="password"
                 className="w-full pl-10 py-2 text-sm border rounded-lg focus:ring-1 focus:ring-blue-500 focus:outline-none"
               />
               <button
@@ -69,7 +115,7 @@ export default function Main() {
               </button>
             </div>
             <button
-              onClick={hidePassword}
+              onClick={handleLogin}
               className="bg-[#1d3557] text-white rounded-lg w-full px-4 py-2 my-3 hover:bg-[#2a4d7a] transition-colors"
             >
               Log in

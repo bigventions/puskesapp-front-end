@@ -1,14 +1,33 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "@/components/organisms/Navbar";
-import Sidebar from "@/components/organisms/Sidebar";
+// Import Dependencies
 
-export default function MainLayout() {
+import { Outlet } from "react-router-dom";
+import { Navbar } from "@/components/organisms/Navbar";
+import { Sidebar } from "@/components/organisms/Sidebar";
+
+export default function MainLayout(
+  {
+    // Props
+  },
+) {
+  // State
+
+  // Hooks
+
+  // Methods
+
+  // Event Handler
+
+  // Return JSX
   return (
-    <div className="flex flex-cols">
-      <Sidebar />
-      <div className="dark:bg-darkMainBg h-screen w-screen">
-        <Navbar />
-        <Outlet />
+    <div className="flex flex-col h-screen overflow-hidden">
+      <Navbar className="h-16" />
+      <div className="flex flex-row flex-1 h-0">
+        <div className="flex flex-col justify-center">
+          <Sidebar />
+        </div>
+        <div className="flex-1 overflow-y-auto">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

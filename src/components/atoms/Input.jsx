@@ -1,13 +1,25 @@
-export function Input({
-  type = "text",
-  id = "",
-  value = "",
-  placeholder = "",
+// Import Dependencies
+
+export const Input = ({
+  // Props
   disabled = false,
+  id = "",
   max = "",
+  placeholder = "",
+  type = "text",
+  value = "",
   onChange = () => {},
   onKeyDown = () => {},
-}) {
+}) => {
+  // State
+
+  // Hooks
+
+  // Methods
+
+  // Event Handler
+
+  // Return JSX
   return (
     <input
       type={type}
@@ -22,4 +34,4 @@ export function Input({
       disabled={disabled}
     />
   );
-}
+};

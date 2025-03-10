@@ -1,0 +1,7 @@
+1. Import dependencies *Sort A - Z (Diutamakan bentuk object di atas)
+2. Props *Sort A - Z
+3. State *Sort A - Z
+4. Hooks (redux, useEffect, useMemo)
+5. Methods *Sort A - Z
+6. Event Handler *Sort A - Z
+7. Return JSX

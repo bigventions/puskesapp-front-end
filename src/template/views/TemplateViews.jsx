@@ -1,8 +1,6 @@
 // Import Dependencies
 
-import { Outlet } from "react-router-dom";
-
-export default function LoginLayout(
+export default function TemplateViews(
   {
     // Props
   },
@@ -16,5 +14,5 @@ export default function LoginLayout(
   // Event Handler
 
   // Return JSX
-  return <Outlet />;
+  return <></>;
 }

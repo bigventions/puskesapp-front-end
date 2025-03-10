@@ -1,9 +1,17 @@
+// Import Dependencies
+
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function ErrorBoundary({ children }) {
-  const [hasError, setHasError] = useState(false);
+export const ErrorBoundary = ({
+  // Props
+  children,
+}) => {
+  // State
   const [error, setError] = useState(null);
+  const [hasError, setHasError] = useState(false);
 
+  // Hooks
   useEffect(() => {
     const handleError = (event) => {
       setHasError(true);
@@ -14,6 +22,11 @@ export default function ErrorBoundary({ children }) {
     return () => window.removeEventListener("error", handleError);
   }, []);
 
+  // Methods
+
+  // Event Handler
+
+  // Return JSX
   if (hasError) {
     return (
       <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -31,15 +44,15 @@ export default function ErrorBoundary({ children }) {
             </p>
           )}
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="/"
+            <Link
+              to={"/"}
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500"
             >
               Go back home
-            </a>
-            <a href="#" className="text-sm font-semibold text-gray-900">
+            </Link>
+            <Link to={"#"} className="text-sm font-semibold text-gray-900">
               Contact support <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
         </div>
       </main>
@@ -47,4 +60,4 @@ export default function ErrorBoundary({ children }) {
   }
 
   return children;
-}
+};
