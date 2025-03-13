@@ -18,3 +18,12 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+@layer base {
+  :root { 
+    --color-text: #101828;
+  }
+  .dark { 
+    --color-text: #ffffff;
+  }
+}

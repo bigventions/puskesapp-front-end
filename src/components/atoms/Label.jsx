@@ -17,7 +17,7 @@ export const Label = ({
   return (
     <label
       htmlFor={id}
-      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      className="block mb-2 text-sm font-medium text-text"
     >
       {children}
     </label>

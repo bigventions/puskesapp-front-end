@@ -18,7 +18,7 @@ export const Button = ({
     switch (type) {
       case "danger":
         setClass(
-          "cursor-pointer py-2.5 px-5 text-sm font-medium rounded-lg text-white bg-bgButtonDanger",
+          "cursor-pointer py-2.5 px-5 text-sm font-medium rounded-lg text-white bg-danger",
         );
         break;
       case "primary":
@@ -28,7 +28,7 @@ export const Button = ({
         break;
       default:
         setClass(
-          "cursor-pointer py-2.5 px-5 text-sm font-medium rounded-lg text-white bg-bgButtonPrimary hover:bg-hoverBgButton",
+          "cursor-pointer py-2.5 px-5 text-sm font-medium rounded-lg text-white bg-primary hover:bg-hoverBgButton",
         );
         break;
     }

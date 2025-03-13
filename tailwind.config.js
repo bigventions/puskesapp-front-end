@@ -25,6 +25,43 @@ module.exports = {
         hoverBgButtonPrimary: "#61ac98",
 
         bgButtonDanger: "#ff5652",
+        
+        
+        
+        primary: {
+          'DEFAULT': '#2E5077',
+          'brighter': '',
+          'darker': '',
+        },
+        secondary: {
+          'DEFAULT': '#79D7BE',
+          'brighter': '',
+          'darker': '',
+        },
+        info: {
+          'DEFAULT': '#00A3FF',
+          'brighter': '',
+          'darker': '',
+        },
+        danger: {
+          'DEFAULT': '#FF5652',
+          'brighter': '',
+          'darker': '',
+        },
+        success: {
+          'DEFAULT': '#17DE8B',
+          'brighter': '',
+          'darker': '',
+        },
+        warning: {
+          'DEFAULT': '#FFCB12',
+          'brighter': '',
+          'darker': '',
+        },
+        
+        text: {
+          DEFAULT: "var(--color-text)",
+        },
       },
     },
     fontFamily: {

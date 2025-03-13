@@ -1,7 +1,9 @@
 // Import Dependencies
 
 import { useId } from "react";
-import Input from "../atoms/Input";
+import { Label } from "../atoms/Label";
+import { Input } from "../atoms/Input";
+import { Text } from "../atoms/Text";
 
 export const TextField = ({
   // Props
@@ -34,13 +36,8 @@ export const TextField = ({
   return (
     <div className="w-full">
       <div className="flex justify-between">
-        <label
-          htmlFor={myId}
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          {label || "Label"}
-        </label>
-        <p className="text-sm text-gray-500 dark:text-gray-900">{label3}</p>
+        <Label id={myId}>{label || "Label"}</Label>
+        <Text className="text-sm text-gray-500 dark:text-gray-900">{label3}</Text>
       </div>
       <Input
         type={type}
@@ -51,7 +48,7 @@ export const TextField = ({
         onChange={handleChange}
         max={max}
       />
-      <p className="mt-2 text-sm text-gray-500">{label2}</p>
+        <Text className="mt-2 text-sm text-gray-500 dark:text-gray-900">{label2}</Text>
     </div>
   );
 };
