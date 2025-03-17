@@ -9,56 +9,37 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Background Main
-        darkMainBg: "#2c2c2c",
-
-        // Dark Mode
-        darkBg: "#383838",
-        hoverDarkBg: "#1d3557",
-
-        // Light Mode
-        lightBg: "#f9fbfc",
-        hoverLightBg: "#2e5077",
-
-        // Button
-        bgButtonPrimary: "#79d7be",
-        hoverBgButtonPrimary: "#61ac98",
-
-        bgButtonDanger: "#ff5652",
-        
-        
-        
         primary: {
-          'DEFAULT': '#2E5077',
-          'brighter': '',
-          'darker': '',
+          DEFAULT: "#2E5077",
+          brighter: "",
+          darker: "",
         },
         secondary: {
-          'DEFAULT': '#79D7BE',
-          'brighter': '',
-          'darker': '',
+          DEFAULT: "#79D7BE",
+          brighter: "",
+          darker: "",
         },
         info: {
-          'DEFAULT': '#00A3FF',
-          'brighter': '',
-          'darker': '',
+          DEFAULT: "#00A3FF",
+          brighter: "",
+          darker: "",
         },
         danger: {
-          'DEFAULT': '#FF5652',
-          'brighter': '',
-          'darker': '',
+          DEFAULT: "#FF5652",
+          brighter: "",
+          darker: "",
         },
         success: {
-          'DEFAULT': '#17DE8B',
-          'brighter': '',
-          'darker': '',
+          DEFAULT: "#17DE8B",
+          brighter: "",
+          darker: "",
         },
         warning: {
-          'DEFAULT': '#FFCB12',
-          'brighter': '',
-          'darker': '',
+          DEFAULT: "#FFCB12",
+          brighter: "",
+          darker: "",
         },
-        
+
         text: {
           DEFAULT: "var(--color-text)",
         },

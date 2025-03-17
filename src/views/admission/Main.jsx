@@ -1,4 +1,5 @@
 // Import Dependencies
+import { SearchPatient } from "../../components/molecules/SearchPatient";
 
 export default function Main(
   {
@@ -15,5 +16,9 @@ export default function Main(
 
   // Return JSX
 
-  return <div></div>;
+  return (
+    <div>
+      <SearchPatient />
+    </div>
+  );
 }
