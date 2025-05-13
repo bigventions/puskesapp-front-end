@@ -38,24 +38,24 @@ export const Sidebar = () => {
   // Return JSX
   return (
     <div>
-      <nav className="flex flex-col h-full rounded-lg bg-lightBg text-black mx-2 dark:bg-darkBg dark:text-white items-center flex-grow gap-2 p-2 w-14">
+      <nav className="flex flex-col items-center flex-grow h-full gap-2 p-2 mx-2 text-white rounded-lg bg-primary dark:bg-dark dark:text-white w-14">
         {menuItems.map((item, index) => (
           <div
             key={index}
-            className="flex items-center relative"
+            className="relative flex items-center"
             onMouseEnter={() => handleHover(index)}
             onMouseLeave={handleMouseLeave}
           >
             {/* Link with only icon visible initially */}
             <Link
               to={item.page}
-              className="flex items-center h-12 px-4 rounded-lg hover:bg-hoverLightBg hover:text-black dark:hover:bg-darkBg"
+              className="flex items-center h-12 px-4 rounded-lg hover:bg-primary-brighter hover:text-white dark:hover:bg-dark"
             >
               <span>{item.icon}</span>
 
               {/* Title appears next to icon only if it's the active item */}
               <span
-                className={`ml-4 text-sm bg-hoverLightBg text-white dark:bg-darkBg dark:text-white dark:hover:bg-darkBg rounded-lg w-[150px] absolute px-2 py-2 left-full z-40 duration-300 opacity-0 ${activeIndex === index ? "opacity-100 max-w-xs" : "opacity-0 max-w-0"}`}
+                className={`ml-4 text-sm bg-primary text-white dark:bg-dark dark:text-white dark:hover:bg-dark rounded-lg w-[150px] absolute px-2 py-2 left-full z-40 duration-300 opacity-0 ${activeIndex === index ? "opacity-100 max-w-xs" : "opacity-0 max-w-0"}`}
               >
                 {item.name}
               </span>

@@ -40,24 +40,28 @@ export const SearchPatient = () => {
   const searchPatients = (e) => {
     const value = e.target.value.toLowerCase();
     setQuery(value);
-    setFilteredPatients(
-      patientsData.filter((patient) =>
-        patient.name.toLowerCase().includes(value),
-      ),
-    );
+    if (value === "") {
+      setFilteredPatients([]); // kosongkan hasil pencarian saat input kosong
+    } else {
+      setFilteredPatients(
+        patientsData.filter((patient) =>
+          patient.name.toLowerCase().includes(value),
+        ),
+      );
+    }
   };
 
   // Event Handler
 
   // Return JSX
   return (
-    <div className="relative w-full mx-auto p-4 mt-5">
+    <div className="relative w-full p-4 mx-auto mt-5">
       <div className="relative">
         <input
           type="text"
           value={query}
           onChange={searchPatients}
-          className="w-full px-4 py-2 text-[#9CA3AF] border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full px-4 py-2 text-[#9CA3AF] border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-dark"
           placeholder="Cari Data Pasien (No RM, Nama Lengkap, NIK, atau No BPJS)"
         ></input>
         <div className="absolute right-5 top-1/2 transform -translate-y-1/2 text-[#9CA3AF]">
@@ -66,14 +70,14 @@ export const SearchPatient = () => {
       </div>
 
       {filteredPatients.length > 0 && (
-        <ul className="left-0 w-full m bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto">
+        <ul className="left-0 w-full overflow-y-auto bg-white border rounded-lg shadow-lg m max-h-60 dark:bg-dark">
           {filteredPatients.map((patient) => (
             <li
               key={patient.id}
-              className="w-full p-3 border-b hover:bg-gray-100"
+              className="w-full p-3 border-b hover:bg-gray-100 dark:hover:bg-dark"
             >
               <div className="flex items-center">
-                <strong>{patient.name}</strong>
+                <strong className="dark:text-white">{patient.name}</strong>
                 <span className="pl-2 block text-sm text-[#9CA3AF] font-semibold">
                   {patient.age} TAHUN {patient.months} BULAN {patient.days} HARI
                 </span>
